@@ -1,0 +1,10 @@
+steps:
+  - command: echo "hey"
+    agents:
+      foo: "foo"
+  - command: sleep 5m
+    agents:
+      foo: "bar"
+  - command: echo "done"
+    agents:
+      foo: "baz"

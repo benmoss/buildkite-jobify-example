@@ -1,0 +1,17 @@
+[[agents]]
+name = "foo"
+kubernetes = "job.yml"
+[agents.tags]
+foo = "foo"
+
+[[agents]]
+name = "bar"
+kubernetes = "job.yml"
+[agents.tags]
+foo = "bar"
+
+[[agents]]
+name = "baz"
+kubernetes = "job.yml"
+[agents.tags]
+foo = "baz"
