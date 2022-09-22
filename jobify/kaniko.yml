@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: agent
+spec:
+  template:
+    spec:
+      containers:
+        - name: agent
+          image: benmoss/kaniko:latest
+          command: ["buildkite-agent"]
+          args: ["start", "--disconnect-after-job"]
+          env:
+            - name: "BUILDKITE_AGENT_TOKEN"
+              valueFrom:
+                secretKeyRef:
+                  key: "token"
+                  name: "buildkite-api"
+      restartPolicy: Never

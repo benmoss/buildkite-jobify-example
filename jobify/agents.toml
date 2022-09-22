@@ -1,8 +1,8 @@
 [[agents]]
-name = "foo"
-kubernetes = "job.yml"
+name = "kaniko"
+kubernetes = "kaniko.yml"
 [agents.tags]
-foo = "foo"
+role = "kaniko"
 
 [[agents]]
 name = "bar"
