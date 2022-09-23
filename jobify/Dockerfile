@@ -10,7 +10,8 @@ RUN apk add -U \
     bash \
     git \
     openssh \
-    binutils
+    binutils \ 
+    make
 
 # Get the kaniko binaries from the previous build stage
 COPY --from=kaniko /kaniko /kaniko
