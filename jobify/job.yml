@@ -9,6 +9,9 @@ spec:
         - name: agent
           image: buildkite/agent:3
           args: ["start", "--disconnect-after-job"]
+          volumeMounts:
+            - mountPath: /buildkite
+              name: buildkite-cfg
           env:
             - name: "BUILDKITE_AGENT_TOKEN"
               valueFrom:
@@ -16,3 +19,7 @@ spec:
                   key: "token"
                   name: "buildkite-api"
       restartPolicy: Never
+      volumes:
+        - name: buildkite-cfg
+          configMap:
+            name: buildkite-cfg
