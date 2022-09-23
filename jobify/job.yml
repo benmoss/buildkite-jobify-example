@@ -12,6 +12,8 @@ spec:
           volumeMounts:
             - mountPath: /buildkite
               name: buildkite-cfg
+            - mountPath: /buildkite/builds
+              name: build
           env:
             - name: "BUILDKITE_AGENT_TOKEN"
               valueFrom:
@@ -25,3 +27,5 @@ spec:
         - name: buildkite-cfg
           configMap:
             name: buildkite-cfg
+        - name: build
+          emptyDir: {}
