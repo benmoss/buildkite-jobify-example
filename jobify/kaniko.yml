@@ -28,3 +28,5 @@ spec:
         - name: buildkite-cfg
           configMap:
             name: buildkite-cfg
+        - name: build
+          emptyDir: {}
