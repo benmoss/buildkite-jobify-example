@@ -18,6 +18,8 @@ spec:
                 secretKeyRef:
                   key: "token"
                   name: "buildkite-api"
+            - name: "BUILDKITE_AGENT_CONFIG"
+              value: "/buildkite/buildkite.cfg"
       restartPolicy: Never
       volumes:
         - name: buildkite-cfg
