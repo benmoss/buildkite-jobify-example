@@ -1,4 +1,6 @@
 steps:
   - command: make kaniko
+    retry:
+      automatic: true
     agents:
       role: "kaniko"
